@@ -1,56 +1,26 @@
 # Blockchain KYC Prototype
 
-A simple KYC (Know Your Customer) verification system using a blockchain-inspired audit trail.
+A full-stack prototype application for submitting, reviewing, and tracking Know Your Customer (KYC) documents. The backend features a mock blockchain implementation to maintain an immutable log of KYC events and status changes.
 
-## Stack
+## Tech Stack
 
-- **Backend**: FastAPI + Python 3.12
-- **Frontend**: React + Vite
-
-## Project Structure
-
-```
-/
-├── backend/
-│   ├── main.py
-│   ├── app/
-│   │   ├── models/kyc_models.py
-│   │   ├── routes/kyc_routes.py
-│   │   └── services/
-│   │       ├── blockchain.py
-│   │       └── kyc_service.py
-│   └── pyproject.toml
-├── frontend/
-│   ├── src/
-│   │   ├── api/kycApi.js
-│   │   ├── components/
-│   │   ├── pages/
-│   │   └── main.jsx
-│   └── package.json
-└── start.py
-```
+* **Backend:** FastAPI, Python 3.12, `uv` (Package Manager)
+* **Frontend:** React, Vite, `pnpm` (Package Manager)
 
 ## Prerequisites
 
-- Python 3.12+
-- Node.js 18+
-- `uv` or `pip` for Python deps
+Ensure you have the following installed on your system:
+* [Python 3.12+](https://www.python.org/downloads/)
+* [Node.js](https://nodejs.org/)
+* [`uv`](https://docs.astral.sh/uv/) (Python package manager)
+* [`pnpm`](https://pnpm.io/) (Node package manager)
 
-## Setup & Run
+## Quick Start
 
-```bash
-python start.py
-```
+The project includes a unified startup script that automatically handles dependency installation and starts both servers concurrently.
 
-This installs dependencies and starts both servers:
-- Backend: http://localhost:8000
-- Frontend: http://localhost:5173
+1. Open a terminal in the root directory of the project.
+2. Run the start script:
 
-## Pages
-
-| Route | Description |
-|-------|-------------|
-| `/` | Submit a new KYC application |
-| `/verifier` | View and action pending KYCs |
-| `/verifier/:id` | Review and approve/reject a KYC |
-| `/status` | Check KYC status by ID |
+   ```bash
+   python start.py
